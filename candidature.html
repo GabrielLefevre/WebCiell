@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="projet">
+	<head>
+		<meta charset="utf-8">
+		<script src="Scripts/angular.js"></script>
+		<script src="Scripts/angular-route.js"></script>
+		<script src="candidature.js"></script>
+		<link href="BootStrapDev/css/bootstrap.css" rel="stylesheet" >
+		<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- pour les mobiles et zoom tactile -->
+	</head>
+
+	<body>
+		<div class="container">
+			<header  class="page-header">
+				<h2> WebCiell </h2>
+			</header>
+
+			<div class="row">
+				<nav class="col-md-2">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<ul class="nav nav-pills">
+								<li> <a href="#testRoute"> Vos coordonnées </a> </li>
+								<li> <a href="#"> Nouvelle candidature </a> </li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				
+				<section ng-controller="candidatureController" class="col-md-10">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title"> Liste des voeux </h3>
+						</div>
+						<div class="panel-body">
+							<ul>
+								<li ng-repeat="voeu in voeux"> Mr {{voeu.nom}} étudie à {{voeu.iut}} et est en LP {{voeu.section}}</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+		
+	    <div ng-view></div>
+		
+		<!-- appels JavaScript pour les plugins Jquery : -->
+		<!--<script src="js/jquery.min.js"></script> -->
+		<!--<script src="js/bootstrap.min.js"></script> -->
+	</body>
+
+</html>
